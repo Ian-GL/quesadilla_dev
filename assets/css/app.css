@@ -41,6 +41,13 @@
   display: block;
   margin: -1rem 0 2rem;
 }
+.container {
+  margin: auto;
+  max-width: 1024px;
+  padding: 0 2.0rem;
+  position: relative;
+  width: 100%
+}
 
 /* LiveView specific classes for your customization */
 .phx-no-feedback.invalid-feedback,
