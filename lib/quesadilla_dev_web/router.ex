@@ -17,7 +17,7 @@ defmodule QuesadillaDevWeb.Router do
   scope "/", QuesadillaDevWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", PageLive
   end
 
   # Other scopes may use custom stacks.
