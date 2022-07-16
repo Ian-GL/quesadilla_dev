@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= csrf_meta_tag() %>
     <%= live_title_tag "Ian González", suffix: " · Personal page" %>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,800,900&amp;display=swap" rel="stylesheet">
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
@@ -19,5 +20,10 @@
       </section>
     </header>
     <%= @inner_content %>
+    <footer class="flex items-center flex-col text-red-400">
+      <p>Made with Phoenix LiveView</p>
+      <p class="text-sm">Hosted with Fly.io</p>
+      <p class="text-xs">The code of this page is open source and can be found here</p>
+    </footer>
   </body>
 </html>
