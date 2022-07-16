@@ -15,6 +15,11 @@ config :quesadilla_dev, QuesadillaDevWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configures the endpoint
+config :quesadilla_dev, QuesadillaDevWeb.Endpoint,
+  url: [host: "quesadilla.dev"],
+  check_origin: false
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
