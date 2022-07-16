@@ -6,7 +6,22 @@
         <div
           class="absolute w-12 h-12 flex justify-center cursor-pointer bg-gray-800 bottom-2 right-4 rounded-full border border-2 border-gray-200"
         >
-          <p class="p-2 text-2xl">👀</p>
+          <p class="p-2 text-2xl" phx-click={
+            Phoenix.LiveView.JS.toggle(
+              to: "#eyes",
+              in: "fade-in",
+              out: "fade-out",
+              display: "flex"
+            )}
+          >👀</p>
+        </div>
+        <div id="eyes" class="absolute top-20 left-20 flex hidden">
+          <div class="relative bg-white rounded-full w-7 h-7 flex">
+            <div class="absolute bottom-2 bg-black rounded-full w-3.5 h-3.5"></div>
+          </div>
+          <div class="ml-1 relative bg-white rounded-full w-7 h-7 flex">
+            <div class="absolute bottom-2 bg-black rounded-full w-3.5 h-3.5"></div>
+          </div>
         </div>
       </div>
       <div class="flex flex-col ml-24">
