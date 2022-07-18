@@ -5,7 +5,6 @@ defmodule QuesadillaDevWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {QuesadillaDevWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,10 +13,26 @@ defmodule QuesadillaDevWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :root_layout do
+    plug :put_root_layout, {QuesadillaDevWeb.LayoutView, :root}
+  end
+
+  pipeline :work_layout do
+    plug :put_root_layout, {QuesadillaDevWeb.LayoutView, :work}
+  end
+
   scope "/", QuesadillaDevWeb do
     pipe_through :browser
+    pipe_through :root_layout
 
     live "/", PageLive
+  end
+
+  scope "/", QuesadillaDevWeb do
+    pipe_through :browser
+    pipe_through :work_layout
+
+    get "/work", PageController, :show_work
   end
 
   # Other scopes may use custom stacks.

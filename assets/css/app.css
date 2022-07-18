@@ -44,7 +44,6 @@
 .container {
   margin: auto;
   max-width: 1024px;
-  padding: 0 2.0rem;
   position: relative;
   width: 100%
 }

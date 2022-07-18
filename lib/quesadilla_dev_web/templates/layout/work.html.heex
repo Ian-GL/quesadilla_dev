@@ -10,7 +10,7 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body class="bg-red-100">
+  <body>
     <header>
       <section class="container">
         <nav>
@@ -20,7 +20,7 @@
       </section>
     </header>
     <%= @inner_content %>
-    <footer class="flex items-center flex-col text-red-400">
+    <footer class="flex items-center flex-col text-red-400 mb-10">
       <p>Made with Phoenix LiveView</p>
       <p class="text-sm">Hosted with Fly.io</p>
       <p class="text-xs">The code of this page is open source and can be found here</p>
