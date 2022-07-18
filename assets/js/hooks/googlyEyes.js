@@ -1,3 +1,7 @@
+// The code in this hook that makes the eye follow the cursor was blatantly copied from this tutorial:
+// https://learnersbucket.com/tutorials/js-projects/eye-follow-cursor-in-javascript/
+// Original author is [Prashant Yadav](https://learnersbucket.com/author/know_prashant/)
+
 const rotateEyes = (e) => {
   const eyes = document.querySelectorAll(".eye");
 
