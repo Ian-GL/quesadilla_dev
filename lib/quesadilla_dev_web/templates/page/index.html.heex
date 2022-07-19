@@ -1,10 +1,10 @@
 <section class="container bg-red-100">
-  <div class="my-24">
-    <div class="flex">
-      <div class="relative">
-        <img class="rounded-full" style="width: 44rem;" src="https://avatars.githubusercontent.com/u/24900688?v=4" alt="Profile shot picture of Ian Gonzalez"/>
+  <div class="my-10 md:my-24">
+    <div class="flex flex-col md:flex-row">
+      <div class="relative min-w-max self-center md:self-auto mb-10 md:mb-0">
+        <img class="rounded-full w-60 h-60" src="https://avatars.githubusercontent.com/u/24900688?v=4" alt="Profile shot picture of Ian Gonzalez"/>
         <div
-          class="absolute w-12 h-12 flex justify-center cursor-pointer bg-gray-800 bottom-2 right-4 rounded-full border border-2 border-gray-200"
+          class="absolute w-12 h-12 flex justify-center cursor-pointer bg-gray-800 bottom-2 right-4 rounded-full border border-2 border-gray-200 hidden md:block"
         >
           <p class="p-2 text-2xl" phx-click={
             Phoenix.LiveView.JS.toggle(
@@ -18,7 +18,7 @@
         <div
           id="eyes"
           class="absolute flex hidden"
-          style="top: 108px; left: 110px;"
+          style="top: 86px; left: 87px;"
           phx-hook="GooglyEyes"
         >
           <div class="eye relative bg-white rounded-full w-8 h-8 flex">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col ml-24">
+      <div class="flex flex-col items-center md:items-baseline md:ml-24 px-7 md:px-0">
         <h1 class="mb-10 text-3xl">Ian González</h1>
         <p>Hey! My name is Ian. I am a Software Engineer based in Mexico City 🇲🇽. Currently I work at <a class="text-cyan-700" href="https://blockfi.com/">BlockFi</a> as a Staff Software Engineer. I love using Elixir to code and I am a fan of functional programming ❤️.</p>
         <br>
