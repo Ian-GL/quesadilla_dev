@@ -15,7 +15,9 @@ defmodule QuesadillaDev.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: QuesadillaDev.PubSub},
       # Start the Endpoint (http/https)
-      QuesadillaDevWeb.Endpoint
+      QuesadillaDevWeb.Endpoint,
+      # Start Finch
+      {Finch, name: GithubFinch}
       # Start a worker by calling: QuesadillaDev.Worker.start_link(arg)
       # {QuesadillaDev.Worker, arg}
     ]
