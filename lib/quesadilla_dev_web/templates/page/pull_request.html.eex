@@ -1,0 +1,4 @@
+<div class="mx-4 md:mx-0 p-4 my-10 flex flex-col border border-2 border-purple-400 w-72 md:w-96 rounded-lg">
+  <p class="text-sm mb-1"><%= @page.repo %></p>
+  <a class="text-blue-400" href="<%=@page.pr_link%>"><%= @page.pr_name %></a>
+</div>

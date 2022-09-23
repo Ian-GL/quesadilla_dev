@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="my-10">
+    <div class="flex flex-col">
+      <div class="flex flex-col items-center">
+        <h1 class="mb-10 text-3xl">Open Source</h1>
+        <div class="mx-4 md:mx-0">
+          <p>Lately I've been trying to contribute to open source projects, although I'm not a maintainer of any or even a frequent contributor.</p>
+          <p class="mt-4">Right now I am interested in Machine Learning, which is why my latest PRs have been in projects like <a class="text-blue-400" href="https://github.com/elixir-nx/nx">Elixir Nx</a> or <a class="text-blue-400" href="https://github.com/gradio-app/gradio">Gradio</a>.</p>
+          <p class="mt-4">In this page you'll always find the last 10 PRs I opened and got merged on open source repos:</p>
+        </div>
+        <div class="mt-4">
+          <%= render_many(@prs, QuesadillaDevWeb.PageView, "pull_request.html") %>
+        </div>
+        <div class="my-4">
+          <a class="text-white bg-purple-700 rounded-lg p-4" href="https://github.com/search?o=desc&p=2&q=is%3Apr+author%3AIan-GL+archived%3Afalse+is%3Amerged+is%3Apublic+-user%3AIan-GL&s=created&type=Issues">See more PRs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

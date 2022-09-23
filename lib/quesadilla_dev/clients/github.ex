@@ -14,7 +14,6 @@ defmodule QuesadillaDev.Clients.Github do
     |> case do
       {:ok, %Finch.Response{} = response} ->
         merged_prs = parse_prs_body(response)
-        IO.inspect(merged_prs)
         {:ok, merged_prs}
 
       error ->

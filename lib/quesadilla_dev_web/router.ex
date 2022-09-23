@@ -33,6 +33,7 @@ defmodule QuesadillaDevWeb.Router do
     pipe_through :work_layout
 
     get "/work", PageController, :show_work
+    get "/open-source-contributions", PageController, :show_prs
   end
 
   # Other scopes may use custom stacks.
