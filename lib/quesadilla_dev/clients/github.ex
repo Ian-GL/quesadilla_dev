@@ -38,7 +38,8 @@ defmodule QuesadillaDev.Clients.Github do
     params = %{
             repo: get_repo(raw_item),
             pr_name: pr_name,
-            pr_link: pr_link
+            pr_link: pr_link,
+            date: get_date(raw_item)
           }
 
     case MergedPr.to_struct(params) do
@@ -75,6 +76,21 @@ defmodule QuesadillaDev.Clients.Github do
 
       _ ->
         raise "Unable to get pr info"
+    end
+  end
+
+  defp get_date(raw_item) do
+    date_el =
+      raw_item
+      |> Floki.find(".d-flex relative-time")
+      |> List.first()
+
+    case date_el do
+      {_, _attrs, [date]} ->
+        date
+
+      _ ->
+        raise "Unable to get one of the repos names"
     end
   end
 

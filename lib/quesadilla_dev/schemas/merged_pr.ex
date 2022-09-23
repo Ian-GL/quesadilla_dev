@@ -14,9 +14,10 @@ defmodule QuesadillaDev.Schemas.MergedPr do
     field(:repo, :string)
     field(:pr_name, :string)
     field(:pr_link, :string)
+    field(:date, :string)
   end
 
-  @fields ~w(repo pr_name pr_link)a
+  @fields ~w(repo pr_name pr_link date)a
 
   @spec to_struct(map()) :: {:ok, __MODULE__.t()} | {:error, Ecto.Changeset.t()}
   def to_struct(params) when is_map(params) do
