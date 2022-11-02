@@ -34,6 +34,7 @@ defmodule QuesadillaDevWeb.Router do
 
     get "/work", PageController, :show_work
     get "/open-source-contributions", PageController, :show_prs
+    get "/reading-statistics", PageController, :show_reading_statistics
   end
 
   # Other scopes may use custom stacks.

@@ -2,6 +2,7 @@ defmodule QuesadillaDevWeb.PageController do
   use QuesadillaDevWeb, :controller
 
   alias QuesadillaDev.Clients.Github
+  alias BooksLists.Year2022
 
   def index(conn, _params) do
     render(conn, "index.html")
@@ -19,5 +20,11 @@ defmodule QuesadillaDevWeb.PageController do
       _ ->
         raise "Error getting the PRs"
     end
+  end
+
+  def show_reading_statistics(conn, _params) do
+    books_list = Year2022.list()
+
+    render(conn, "reading_statistics.html", %{books_list: books_list})
   end
 end

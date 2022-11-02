@@ -1,0 +1,10 @@
+<section class="container">
+  <div class="my-10">
+    <h1 class="uppercase">Reading Statistics</h1>
+    <%= for book <- @books_list do %>
+      <p>
+        <%= book.title %> - <%= book.author %>
+      </p>
+    <% end %>
+  </div>
+</section>
