@@ -15,9 +15,10 @@ jobs:
 
     services:
       db:
-        image: postgis/postgis:13-3.1
+        image: postgres:latest
         env:
-          POSTGRES_DB: server_test
+          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD: postgres
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
