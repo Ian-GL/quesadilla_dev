@@ -36,11 +36,11 @@ defmodule QuesadillaDev.Clients.Github do
     {pr_name, pr_link} = get_pr_info(raw_item)
 
     params = %{
-            repo: get_repo(raw_item),
-            pr_name: pr_name,
-            pr_link: pr_link,
-            date: get_date(raw_item)
-          }
+      repo: get_repo(raw_item),
+      pr_name: pr_name,
+      pr_link: pr_link,
+      date: get_date(raw_item)
+    }
 
     case MergedPr.to_struct(params) do
       {:ok, merged_pr} -> merged_pr
@@ -95,5 +95,5 @@ defmodule QuesadillaDev.Clients.Github do
   end
 
   defp build_url([href]) when is_binary(href), do: "https://github.com" <> href
-  defp build_url(_), do: raise "Unable to get PR link"
+  defp build_url(_), do: raise("Unable to get PR link")
 end

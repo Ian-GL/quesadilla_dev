@@ -1,0 +1,43 @@
+name: Elixir CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    env:
+      ELIXIR_VERSION: "1.14.0"
+      OTP_VERSION: "25.0.3"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Elixir
+        uses: "erlef/setup-beam@v1.13.1"
+        with:
+          elixir-version: ${{ env.ELIXIR_VERSION }}
+          otp-version: ${{ env.OTP_VERSION }}
+
+      - name: Restore Dependencies Cache
+        uses: actions/cache@v2
+        with:
+          path: deps
+          key: deps-v0-${{ runner.os }}-${{ env.OTP_VERSION }}-${{ env.ELIXIR_VERSION }}-${{ hashFiles('**/mix.lock') }}
+
+      - name: Install dependencies
+        run: |
+          mix deps.get
+
+      - name: Check Formatting
+        run: mix format --check-formatted --dry-run
+
+      - name: Run Tests
+        run: mix test
+
+      - name: Run Hex Audit
+        run: mix hex.audit
+        continue-on-error: true

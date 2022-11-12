@@ -4,5 +4,4 @@ defmodule QuesadillaDevWeb.PageLive do
   def render(assigns) do
     Phoenix.View.render(QuesadillaDevWeb.PageView, "index.html", assigns)
   end
-
 end
